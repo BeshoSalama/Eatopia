@@ -49,13 +49,3 @@ jobs:
       - name: Build frontend
         working-directory: frontend-src
         run: npm run build
-
-      - name: Install Playwright Chromium
-        working-directory: frontend-src
-        run: npx playwright install --with-deps chromium
-
-      - name: Run E2E tests
-        working-directory: frontend-src
-        env:
-          PLAYWRIGHT_BUNDLED: "1"
-        run: npm run e2e

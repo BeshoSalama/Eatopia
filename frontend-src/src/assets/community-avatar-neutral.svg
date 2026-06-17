@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Community avatar</title>
+  <desc id="desc">Default community avatar</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="80" fill="url(#bg)" />
+  <circle cx="80" cy="58" r="26" fill="#f8fafc" fill-opacity="0.94" />
+  <path
+    d="M38 136c6-25 21-40 42-40s36 15 42 40"
+    fill="#f8fafc"
+    fill-opacity="0.94"
+  />
+</svg>

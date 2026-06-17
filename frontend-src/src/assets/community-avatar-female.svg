@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Female avatar</title>
+  <desc id="desc">Default female community avatar</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#fb7185" />
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="80" fill="url(#bg)" />
+  <path
+    d="M46 60c0-24 15-40 34-40s34 16 34 40c0 20-12 34-34 34S46 80 46 60z"
+    fill="#fff7ed"
+    fill-opacity="0.96"
+  />
+  <path
+    d="M34 136c7-27 24-42 46-42s39 15 46 42"
+    fill="#fff7ed"
+    fill-opacity="0.96"
+  />
+</svg>

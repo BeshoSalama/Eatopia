@@ -3,6 +3,8 @@ frontend-src/node_modules/
 frontend-src/build/
 frontend-src/.env
 frontend-src/*.log
+frontend-src/test-results/
+frontend-src/playwright-report/
 
 # .NET
 **/bin/

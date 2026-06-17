@@ -1,0 +1,19 @@
+{
+    "dish": "grilled kebab",
+    "ingredients": [
+        "pepper",
+        "oil",
+        "onion",
+        "clove",
+        "salt",
+        "soysauce",
+        "lamb"
+    ],
+    "calories": 1192.05,
+    "protein": 65.89,
+    "carbs": 117.98,
+    "fat": 80.55,
+    "sugars": 0.0,
+    "added_sugars": 0.0,
+    "sodium_mg": 3124.75
+}

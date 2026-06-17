@@ -1,0 +1,31 @@
+# Node / React
+frontend-src/node_modules/
+frontend-src/build/
+frontend-src/.env
+frontend-src/*.log
+
+# .NET
+**/bin/
+**/obj/
+**/Logs/
+*.user
+*.suo
+.vs/
+
+# Publish artifacts
+artifacts/
+*.zip
+*.rar
+
+# Logs
+*.log
+
+# Runtime uploads and secrets
+**/wwwroot/uploads/
+*.Production.json
+*.local.json
+
+# Python
+ai/.venv/
+ai/__pycache__/
+ai/**/*.pyc

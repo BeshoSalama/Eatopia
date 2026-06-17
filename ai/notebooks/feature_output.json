@@ -1,0 +1,21 @@
+{
+    "dish": "spaghetti_carbonara",
+    "ingredients": [
+        "shrimp",
+        "pepper",
+        "oil",
+        "parsley",
+        "clove",
+        "butter",
+        "wine",
+        "lemon",
+        "salt",
+        "juice"
+    ],
+    "calories": 150,
+    "protein": 10,
+    "carbs": 15,
+    "fat": 5,
+    "sodium_mg": 200,
+    "added_sugars": 2
+}

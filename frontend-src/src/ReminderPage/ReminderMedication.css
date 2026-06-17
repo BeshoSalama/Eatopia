@@ -1,0 +1,908 @@
+/* --- hero & container --- */
+
+.reminder-med-hero {
+  height: calc(100vh - 32px);
+  min-height: 680px;
+  padding: 24px;
+  background-image: url("../assets/Water3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 16px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0px -1000px 200px rgba(0, 0, 0, 0.3);
+}
+
+.reminder-med-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Left Card */
+
+.left-card {
+  flex: 0 0 75%;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  padding: 24px;
+  backdrop-filter: blur(70px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  height: 50vh;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Medicine cards */
+
+.medicine-list {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.medicine-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.medicine-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.medicine-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+.no-meds {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px 6px;
+  font-weight: 700;
+}
+
+.medicine-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.med-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.med-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.med-dose-count {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+}
+
+.med-top-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.meal-tag {
+  background: rgba(255, 255, 255, 0.14);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.edit-btn,
+.delete-btn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: 0.2s ease;
+}
+
+.edit-btn {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.delete-btn {
+  background: rgba(255, 90, 90, 0.16);
+  color: #ff9b9b;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  transform: scale(1.06);
+}
+
+/* schedule times */
+
+.med-schedule {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.time-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  color: #fff;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.time-btn:hover {
+  background: rgba(0, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.time-btn.done {
+  background: rgba(46, 204, 113, 0.7);
+  border-color: rgba(46, 204, 113, 1);
+  text-decoration: line-through;
+  color: #fff;
+  transform: scale(1.02);
+}
+
+/* Add Medicine Bottom */
+
+.add-med-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.add-med-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 11px 22px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-med-btn:hover {
+  background: rgba(255, 255, 255, 0.32);
+  transform: translateY(-2px);
+}
+
+/* right area water button */
+
+.right-area {
+  flex: 0 0 25%;
+  height: 50vh;
+  min-height: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2;
+}
+
+.reminder-btn.water {
+  color: #66d9ff;
+}
+
+.reminder-btn.water:hover {
+  transform: scale(1.07);
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.reminder-icon {
+  font-size: 70px;
+}
+
+/* ================================
+   Creative Popup - Unique Classes
+================================ */
+
+.medform-overlay {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(94, 216, 255, 0.18), transparent 34%),
+    rgba(0, 0, 0, 0.64);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 999;
+  padding: 92px 18px 18px;
+  overflow: hidden;
+}
+
+.medform-modal {
+  position: relative;
+  width: min(540px, calc(100vw - 36px));
+  height: min(620px, calc(100vh - 116px));
+  color: #fff;
+  border-radius: 28px;
+  padding: 24px 24px 16px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.23), rgba(255, 255, 255, 0.08)),
+    rgba(15, 40, 52, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  animation: medformPop 0.24s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.medform-modal *,
+.medform-modal *::before,
+.medform-modal *::after {
+  box-sizing: border-box;
+}
+
+.medform-top-shape {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  right: -60px;
+  top: -70px;
+  background: rgba(94, 216, 255, 0.26);
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+@keyframes medformPop {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.medform-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+.medform-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-size: 25px;
+  color: #05374a;
+  background: linear-gradient(135deg, #ffffff, #5ed8ff);
+  box-shadow: 0 12px 30px rgba(94, 216, 255, 0.2);
+}
+
+.medform-header h2 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.medform-header p {
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.medform-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.medform-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.medform-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.medform-group input {
+  width: 100%;
+  height: 46px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 0 14px;
+  color: #1f2937;
+  background: rgba(255, 255, 255, 0.94);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.medform-group input:focus {
+  box-shadow: 0 0 0 4px rgba(94, 216, 255, 0.22);
+}
+
+/* الجزء الوحيد اللي يعمل scroll لما الجرعات تزيد */
+
+.medform-time-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-height: 160px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
+  min-width: 0;
+}
+
+.medform-time-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.medform-time-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.medform-time-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+
+.medform-time-card {
+  width: 100%;
+  min-width: 0;
+  padding: 11px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.medform-time-card span {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.medform-time-card input {
+  width: 100%;
+  height: 40px;
+}
+
+.medform-meal-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.medform-meal-choice {
+  min-height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 15px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  font-weight: 800;
+  transition: 0.22s ease;
+}
+
+.medform-meal-choice.active {
+  color: #05374a;
+  background: linear-gradient(135deg, #ffffff, #5ed8ff);
+  box-shadow: 0 12px 26px rgba(94, 216, 255, 0.18);
+}
+
+.medform-meal-choice:hover {
+  transform: translateY(-2px);
+}
+
+.medform-error {
+  margin: 0;
+  padding: 10px 13px;
+  border-radius: 14px;
+  color: #fff;
+  background: rgba(192, 57, 43, 0.48);
+  font-size: 14px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* الأزرار ثابتة أسفل الـ popup */
+
+.medform-actions {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.medform-submit,
+.medform-cancel {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: 0.22s ease;
+  min-height: 46px;
+}
+
+.medform-submit {
+  color: #05374a;
+  background: linear-gradient(135deg, #ffffff, #5ed8ff);
+}
+
+.medform-cancel {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.medform-submit:hover,
+.medform-cancel:hover {
+  transform: translateY(-2px);
+}
+
+/* responsive */
+
+@media (max-width: 980px) {
+  .reminder-med-hero {
+    height: auto;
+    min-height: 100vh;
+    padding-top:8rem;
+    margin: 12px;
+  }
+
+  .reminder-med-container {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .left-card {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 520px;
+  }
+
+  .right-area {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .reminder-btn.water {
+ color: #66d9ff;
+  }
+
+  .reminder-icon {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 650px) {
+  .reminder-med-hero {
+    padding-top:8rem;
+    margin: 8px;
+    border-radius: 18px;
+  }
+
+  .left-card {
+    padding: 18px;
+    border-radius: 22px;
+    min-height: 500px;
+  }
+
+  .card-header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .med-top {
+    flex-direction: column;
+  }
+
+  .med-top-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .meal-tag {
+    flex: 1;
+    text-align: center;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    flex: 1;
+  }
+
+  .med-schedule {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .time-btn {
+    width: 100%;
+  }
+
+  .add-med-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .medform-overlay {
+    align-items: flex-start;
+    padding: 118px 12px 12px;
+  }
+
+  .medform-modal {
+    width: min(390px, calc(100vw - 24px));
+    height: min(560px, calc(100vh - 138px));
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .medform-top-shape {
+    width: 130px;
+    height: 130px;
+    right: -45px;
+    top: -55px;
+  }
+
+  .medform-header {
+    align-items: center;
+    gap: 11px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+
+  .medform-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 17px;
+    font-size: 21px;
+  }
+
+  .medform-header h2 {
+    font-size: 21px;
+  }
+
+  .medform-header p {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .medform-body {
+    gap: 10px;
+  }
+
+  .medform-group {
+    gap: 6px;
+  }
+
+  .medform-group label {
+    font-size: 12px;
+  }
+
+  .medform-group input {
+    height: 40px;
+    font-size: 13px;
+    border-radius: 13px;
+  }
+
+  .medform-time-list {
+    max-height: 116px;
+    gap: 9px;
+  }
+
+  .medform-time-card {
+    padding: 9px;
+    border-radius: 13px;
+  }
+
+  .medform-time-card span {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .medform-time-card input {
+    height: 38px;
+  }
+
+  .medform-meal-options {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .medform-meal-choice {
+    min-height: 40px;
+    font-size: 13px;
+    border-radius: 13px;
+  }
+
+  .medform-actions {
+    padding-top: 8px;
+    gap: 9px;
+    flex-direction: column-reverse;
+  }
+
+  .medform-submit,
+  .medform-cancel {
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 14px;
+    border-radius: 13px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .left-card {
+    padding: 15px;
+  }
+
+  .medicine-card {
+    padding: 13px;
+  }
+
+  .reminder-btn.water {
+    height: 105px;
+    font-size: 26px;
+  }
+
+  .reminder-icon {
+    font-size: 44px;
+  }
+
+  .medform-overlay {
+    padding: 112px 10px 10px;
+  }
+
+  .medform-modal {
+    width: calc(100vw - 20px);
+    height: min(540px, calc(100vh - 126px));
+    padding: 14px;
+    border-radius: 19px;
+  }
+
+  .medform-header {
+    gap: 10px;
+  }
+
+  .medform-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 19px;
+  }
+
+  .medform-header h2 {
+    font-size: 19px;
+  }
+
+  .medform-header p {
+    font-size: 11px;
+  }
+
+  .medform-time-list {
+    max-height: 104px;
+  }
+}
+
+@media (max-width: 360px) {
+  .medform-overlay {
+    padding: 104px 8px 8px;
+  }
+
+  .medform-modal {
+    width: calc(100vw - 16px);
+    height: min(510px, calc(100vh - 114px));
+    padding: 12px;
+    border-radius: 17px;
+  }
+
+  .medform-header p {
+    display: none;
+  }
+
+  .medform-group input {
+    height: 38px;
+  }
+
+  .medform-time-list {
+    max-height: 95px;
+  }
+
+  .medform-meal-choice {
+    min-height: 38px;
+  }
+
+  .medform-submit,
+  .medform-cancel {
+    min-height: 38px;
+  }
+}
+
+/* Scoped hardening: keep medication reminder styles isolated from the water reminder page. */
+.reminder-med-hero *,
+.reminder-med-hero *::before,
+.reminder-med-hero *::after {
+  box-sizing: border-box;
+}
+
+.reminder-med-hero .left-card {
+  flex: 0 0 75%;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  padding: 24px;
+  backdrop-filter: blur(70px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  height: 50vh;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reminder-med-hero .right-area {
+  flex: 0 0 25%;
+  height: 50vh;
+  min-height: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2;
+}
+
+.reminder-med-hero .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reminder-med-hero .page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.reminder-med-hero .reminder-icon {
+  font-size: 70px;
+}
+
+.reminder-med-hero button:focus-visible,
+.reminder-med-hero input:focus-visible {
+  outline: 3px solid rgba(126, 230, 255, 0.75);
+  outline-offset: 3px;
+}
+
+@media (max-width: 980px) {
+  .reminder-med-hero .left-card {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 520px;
+  }
+
+  .reminder-med-hero .right-area {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .reminder-med-hero .reminder-icon {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 650px) {
+  .reminder-med-hero .left-card {
+    padding: 18px;
+    border-radius: 22px;
+    min-height: 500px;
+  }
+
+  .reminder-med-hero .card-header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .reminder-med-hero .page-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .reminder-med-hero .left-card {
+    padding: 15px;
+  }
+
+  .reminder-med-hero .reminder-icon {
+    font-size: 44px;
+  }
+}

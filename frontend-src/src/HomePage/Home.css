@@ -1,0 +1,1154 @@
+/* ===========================
+   Hero Section
+   =========================== */
+.hero-section {
+  margin: 16px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero-container {
+  height: calc(100vh - 32px);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 3vw 9vw;
+  color: white;
+  box-sizing: border-box;
+  box-shadow: inset 0px -300px 150px rgba(0, 0, 0, 0.5);
+}
+
+/* العنوان */
+.hero-title {
+  font-size: clamp(40px, 8vw, 100px);
+  font-weight: 700;
+  max-width: 50%;
+  line-height: 1.1;
+  color: white;
+}
+
+/* الزر */
+.hero-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  padding: 20px 40px;
+  font-size: clamp(20px, 3vw, 44px);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+}
+
+.hero-button-icon {
+  width: clamp(70px, 12vw, 166px);
+  height: auto;
+  margin-left: 20px;
+}
+
+/* النص داخل الزر */
+.hero-button-text {
+  white-space: nowrap;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-box {
+  width: 320px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: popupFade 0.25s ease;
+}
+
+.popup-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+}
+
+.popup-btn {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #f4f4f4;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.popup-btn:hover {
+  background: #e8e8e8;
+}
+
+.cancel-btn {
+  background: #ffe2e2;
+  color: #c0392b;
+}
+
+.cancel-btn:hover {
+  background: #ffd4d4;
+}
+
+.preview-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.preview-image {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive: تابلت وموبايل */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    text-align: left;
+    padding: 10vw 8vw;
+    gap: 20px;
+  }
+
+  .hero-title {
+    max-width: 100%;
+    font-size: clamp(36px, 8vw, 80px);
+    margin-bottom: 20px;
+  }
+
+  .hero-button {
+    /* ✅ تعديل هنا */
+    width: auto; /* مش بعرض الصفحة */
+    align-self: center; /* يخليه في النص */
+    justify-content: center;
+    font-size: clamp(18px, 4vw, 32px);
+    padding: 18px 28px;
+    border-radius: 20px;
+  }
+
+  .hero-button-text {
+    white-space: normal;
+    text-align: left;
+  }
+
+  .hero-button-icon {
+    margin-left: 10px;
+    width: clamp(60px, 10vw, 120px);
+  }
+}
+
+/* 📱 الموبايل الصغير */
+@media (max-width: 600px) {
+  .hero-section {
+    margin: 8px;
+  }
+
+  .hero-container {
+    height:75vh;
+    padding: 12vw 6vw;
+    align-items: center; /* ✅ الزر والعنوان في النص */
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(30px, 9vw, 60px);
+    margin-bottom: 20px;
+  }
+
+  .hero-button {
+    width: auto; /* ✅ مش بعرض الشاشة */
+    align-self: center; /* ✅ في النص */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(18px, 4vw, 26px);
+    padding: 14px 24px;
+  }
+
+  .hero-button-text {
+    text-align: left;
+  }
+
+  .hero-button-icon {
+    margin-left: 10px;
+    width: clamp(50px, 12vw, 90px);
+  }
+}
+
+
+/* ===========================
+   Home.css - Dish Details
+   =========================== */
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* ====== Section الأساسية ====== */
+
+.dish-section {
+  width: 100%;
+  padding: 80px 30px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.dish-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 50px;
+}
+
+/* الحاوية الرئيسية (صورة + تفاصيل) */
+
+.dish-content {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ====== كارت صورة الطبق (الشمال) ====== */
+
+.dish-image-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dish-image {
+  width: 100%;
+  max-height: 400px;
+  aspect-ratio: 1 / 1; /* مربع */
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* ====== كارت التفاصيل (اليمين) ====== */
+
+.dish-info-card {
+  flex: 1;
+  min-width: 350px;
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* مستطيل اسم الوجبة */
+
+.dish-name-pill {
+  padding: 10px 28px;
+  background: #f9fafb;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+  margin-bottom: 18px;
+}
+
+.dish-name-pill span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.dish-name-pill-warning {
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.dish-name-pill-warning span {
+  color: #9a3412;
+}
+
+.dish-status,
+.dish-error {
+  width: 100%;
+  border-radius: 14px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.dish-status {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.dish-error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.dish-grams-control {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 116px auto;
+  align-items: end;
+  gap: 12px;
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 18px;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  text-align: left;
+}
+
+.dish-grams-copy {
+  display: grid;
+  gap: 3px;
+}
+
+.dish-grams-copy span,
+.dish-grams-control label span {
+  color: #0f766e;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dish-grams-copy strong {
+  color: #102321;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.dish-grams-copy small {
+  color: #53635f;
+  font-weight: 700;
+}
+
+.dish-grams-control label {
+  display: grid;
+  gap: 6px;
+}
+
+.dish-grams-control input {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 12px;
+  border: 1px solid #99f6e4;
+  padding: 0 10px;
+  color: #102321;
+  font-size: 15px;
+  font-weight: 800;
+  outline: none;
+  background: #ffffff;
+}
+
+.dish-grams-control input:focus {
+  border-color: #0abab5;
+  box-shadow: 0 0 0 3px rgba(10, 186, 181, 0.16);
+}
+
+.dish-grams-control button {
+  min-height: 42px;
+  border: none;
+  border-radius: 999px;
+  padding: 0 14px;
+  color: #ffffff;
+  background: #0f766e;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dish-grams-control button:hover {
+  background: #0abab5;
+}
+
+.dish-warning {
+  width: 100%;
+  border-radius: 16px;
+  padding: 18px;
+  margin: 6px 0 18px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #9a3412;
+  text-align: left;
+}
+
+.dish-warning strong,
+.dish-warning span {
+  display: block;
+}
+
+.dish-warning strong {
+  margin-bottom: 6px;
+  color: #7c2d12;
+  font-size: 1rem;
+}
+
+.dish-warning span {
+  line-height: 1.55;
+}
+
+.dish-extra {
+  width: 100%;
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.dish-extra h3 {
+  margin: 0 0 8px;
+  color: #111827;
+  font-size: 1rem;
+}
+
+.dish-extra p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+
+/* ====== جريد دوائر القيم الغذائية ====== */
+
+.nutrients-circles-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 في الصف */
+  gap: 30px 40px;
+  justify-items: center;
+}
+
+/* عنصر دائرة واحد */
+
+.nutrient-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* الحاوية الخارجية للدايرة */
+
+.circle-outer {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* التفاف الـ SVG + المحتوى الداخلي */
+
+.circle-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+/* SVG */
+
+.circle-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* عشان البداية تبقى من فوق */
+}
+
+/* الخلفية الرمادية */
+
+.circle-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 10;
+}
+
+/* مسار التقدم */
+
+.circle-progress-path {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round; /* ✅ أطراف سموز */
+  transition: stroke-dashoffset 1.2s ease-out;
+}
+
+/* المحتوى داخل الدايرة */
+
+.circle-inner {
+  position: absolute;
+  inset: 14px;
+  background: #f9fafb;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.circle-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.circle-label-inside {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* ====== تابلت (max-width: 992px) ====== */
+
+@media (max-width: 992px) {
+  .dish-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .dish-image-container,
+  .dish-info-card {
+    max-width: 90%;
+  }
+
+  .dish-grams-control {
+    grid-template-columns: 1fr;
+  }
+
+  .nutrients-circles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 في الصف */
+  }
+}
+
+/* ====== موبايل (max-width: 600px) ====== */
+
+@media (max-width: 600px) {
+  .dish-section {
+    padding: 40px 15px;
+  }
+
+  .dish-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .dish-content {
+    padding: 0;
+  }
+
+  .dish-image-container,
+  .dish-info-card {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .nutrients-circles-grid {
+    grid-template-columns: 1fr; /* دايرة واحدة في الصف */
+    gap: 20px;
+  }
+
+  .circle-outer {
+    width: 110px;
+    height: 110px;
+  }
+
+  .circle-value {
+    font-size: 1.4rem;
+  }
+}
+
+
+   /* ===========================
+   Features Section 
+   =========================== */
+
+.features-section {
+  margin: 64px auto;
+  padding: 0 64px;
+  max-width: 1400px;
+  text-align: center;
+}
+
+.feature-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  padding-bottom: 32px;
+  line-height: 1.3;
+  color: #222;
+}
+
+.features-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.feature-card {
+  border-radius: 1rem;
+  padding: 0;
+  transition: all 0.3s ease;
+  flex: 1 1 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  min-width: 250px;
+  background: #fff;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* علشان الصورة تاخد العرض بالكامل */
+}
+
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.feature-img {
+  width: 100%;
+  height: 200px; /* 👈 ممكن تزودها لو الصورة طويلة */
+  object-fit: contain; /* ✅ علشان الصورة تظهر بالكامل */
+  background-color: #f9f9f9; /* خلفية خفيفة لو الصورة مش بتملأ الكارت */
+  border-radius: 1rem 1rem 0 0;
+  display: block;
+}
+
+
+.feature-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #111;
+  text-align: left;
+  margin: 12px 16px 6px;
+}
+
+.feature-text {
+  font-size: 1rem;
+  color: #444;
+  text-align: left;
+  line-height: 1.5;
+  margin: 0 16px 16px;
+}
+
+
+/* ===========================
+   🌍 RESPONSIVE DESIGN
+   =========================== */
+
+/* الأجهزة اللوحية (Tablet) */
+@media (max-width: 1024px) {
+  .features-section {
+    padding: 0 40px;
+  }
+
+  .feature-title {
+    font-size: 2.5rem;
+  }
+
+  .feature-card {
+    flex: 1 1 calc(45% - 20px);
+    max-width: calc(45% - 20px);
+  }
+}
+
+/* الموبايل (Mobile) */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 0 20px;
+  }
+
+  .feature-title {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .feature-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .feature-name,
+  .feature-text {
+    text-align: center;
+  }
+
+  .feature-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* الموبايل الصغير جدًا (Small Mobile) */
+@media (max-width: 480px) {
+  .feature-title {
+    font-size: 1.6rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
+  }
+
+  .feature-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .feature-name {
+    font-size: 1.2rem;
+  }
+
+  .feature-text {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ===========================
+   Recipes Section
+   =========================== */
+.blog-section {
+  background: #f7f8f9;
+  padding: 60px 256px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.blog-header h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.read-btn {
+  background-color: #00bfa5;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 26px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.read-btn:hover {
+  background-color: #009e8a;
+}
+
+.read-btn span {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+/* ===========================
+   Layout
+   =========================== */
+.blog-container {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr; /* ✅ الكارت الكبير + شبكة الأربع */
+  gap: 24px;
+  align-items: center;
+}
+
+/* الكارت الكبير */
+.blog-card.large {
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* شبكة الكروت الصغيرة */
+.small-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  height: 100%;
+}
+
+/* كل الكروت */
+.blog-card {
+  background: #fff;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ✅ الصورة تملأ الكارت من فوق حتى بداية النص */
+.blog-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+/* النص */
+.blog-card .content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.blog-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.blog-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 1200px) {
+  .blog-section {
+    padding: 40px 60px;
+  }
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 40px 20px;
+  }
+  .blog-header h2 {
+    font-size: 2.4rem;
+  }
+  .read-btn {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  .small-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===========================
+   About Us Section (Responsive & Static)
+   =========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-us-section {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.about-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+/* ===== Layout ===== */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.section {
+  position: relative;
+  flex: 1 1 400px;
+  max-width: 450px;
+}
+
+.bg-circle {
+  position: absolute;
+  width: 14rem;
+  height: 14rem;
+  background-color: #99d8d0;
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.vision .bg-circle,
+.mission .bg-circle {
+  top: -2rem;
+  left: -2rem;
+}
+
+.icon-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Lightbulb Icon ===== */
+.lightbulb-wrapper {
+  position: relative;
+}
+
+.lightbulb {
+  width: 4rem;
+  height: 5rem;
+  background-color: #5eead4;
+  border-radius: 50% 50% 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbulb svg {
+  width: 3rem;
+  height: 3rem;
+  fill: #14b8a6;
+}
+
+.bulb-base-1 {
+  width: 4rem;
+  height: 0.5rem;
+  background-color: #1f2937;
+}
+
+.bulb-base-2 {
+  width: 4rem;
+  height: 0.25rem;
+  background-color: #4b5563;
+}
+
+/* ===== Arrow Icon ===== */
+.arrow-wrapper {
+  background-color: #14b8a6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+}
+
+.arrow-wrapper svg {
+  width: 4rem;
+  height: 4rem;
+  stroke: white;
+  stroke-width: 3;
+  fill: none;
+}
+
+/* ===== Content ===== */
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.text-content {
+  color: #374151;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.text-content p {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Divider ===== */
+.section-divider {
+  width: 2px;
+  background-color: #d1d5db;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .about-title {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .content-wrapper {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .section-divider {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .text-content {
+    font-size: 1rem;
+  }
+
+  .bg-circle {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-section {
+    padding: 3rem 2.5rem;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+.feature-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-card[role="button"]:focus-visible,
+.feature-card:focus-visible,
+.read-btn:focus-visible {
+  outline: 3px solid rgba(0, 191, 165, 0.35);
+  outline-offset: 4px;
+}

@@ -1,0 +1,506 @@
+.signup-body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 32px);
+  background: url("../assets/HomeImage.png") no-repeat center center/cover;
+  box-shadow: inset 0 600px 150px rgba(0, 0, 0, 0.5);
+  padding-top: 80px;
+  margin: 16px;
+  border-radius: 20px;
+}
+
+
+.signup-wrapper {
+  width: 650px;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(50px);
+  color: #fff;
+  border-radius: 20px;
+  padding: 30px 35px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.6s ease;
+}
+
+.signup-wrapper h1 {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+/* 🧱 الحقول */
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 4px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 40px;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 20px;
+  transition: 0.3s ease;
+  appearance: none;
+  color-scheme: dark;
+}
+
+.password-input-box input {
+  padding-right: 58px;
+}
+
+.input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.input-box input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.signup-wrapper .input-box input:-webkit-autofill,
+.signup-wrapper .input-box input:-webkit-autofill:hover,
+.signup-wrapper .input-box input:-webkit-autofill:focus,
+.signup-wrapper .input-box input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff;
+  caret-color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.12) inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.signup-wrapper .input-box input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.85;
+}
+
+/* 👁️ أيقونة الباسورد */
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 25px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  transition: 0.3s;
+  box-shadow: none;
+  padding: 0;
+}
+.eye-icon:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-50%) scale(1.04);
+}
+
+/* 🌈 Gender Dropdown */
+.gender-dropdown {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.gender-btn {
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  transition: 0.3s ease;
+}
+
+.gender-btn:hover,
+.gender-btn:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.arrow-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.open {
+  transform: rotate(180deg);
+}
+
+/* 🪄 Dropdown Menu (يظهر لفوق) */
+.gender-menu {
+  position: absolute;
+  bottom: 58px; /* 👈 بدل top: 58px */
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.842); /* 👈 خلفية أوضح */
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 20;
+  animation: slideUp 0.3s ease;
+}
+
+.gender-option {
+  padding: 13px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.gender-option:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ✨ Animation للقائمة */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ✅ زر التأكيد */
+.confirm-btn {
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 10px;
+}
+
+.confirm-btn:hover {
+  transform: scale(1.03);
+  background: #fff;
+}
+.confirm-btn:active {
+  transform: scale(0.97);
+}
+
+/* 🌍 Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin: 15px 0;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.divider:not(:empty)::before {
+  margin-right: 10px;
+}
+.divider:not(:empty)::after {
+  margin-left: 10px;
+}
+
+/* 🌐 Social Buttons */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.social-btn {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #555;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.03);
+  background: #fff;
+
+}
+.signin-link {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* 🌙 Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .signup-wrapper {
+    width: 95%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+  }
+
+  .gender-dropdown {
+    margin-bottom: 20px;
+  }
+
+  .confirm-btn {
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+  }
+}
+
+
+.error-msg {
+  color: #7f1d1d;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin: 7px 0 0;
+  padding: 8px 12px;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  border-radius: 12px;
+  background: rgba(255, 238, 238, 0.95);
+}
+
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(0, 0, 0, 0.18);
+  border-top-color: #333;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.activation-notice {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0 4px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(10, 186, 181, 0.12);
+  border: 1px solid rgba(10, 186, 181, 0.24);
+  color: #123;
+  box-shadow: 0 12px 28px rgba(10, 186, 181, 0.12);
+}
+
+.activation-notice .activation-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff;
+  font-size: 20px;
+}
+
+.activation-notice strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #0f766e;
+}
+
+.activation-notice p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.activation-notice span {
+  font-weight: 800;
+  color: #0f766e;
+}
+
+.activation-notice button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: #0ABAB5;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .activation-notice {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .activation-notice .activation-icon {
+    margin: 0 auto;
+  }
+}
+
+
+.password-strength {
+  margin: 8px 2px 0;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #f8fafc;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.password-strength-bar {
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.22);
+  margin-bottom: 5px;
+}
+
+.password-strength-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e);
+  transition: width 0.2s ease;
+}
+
+.password-strength p {
+  margin: 0;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Keep signup fields isolated from similarly named inputs in other pages. */
+.signup-wrapper .input-row .input-box {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-width: 250px;
+  margin: 0 0 4px;
+  padding: 0;
+}
+
+.signup-wrapper .input-row .password-input-box {
+  min-height: auto;
+  display: block;
+  align-items: initial;
+  gap: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.signup-wrapper .input-row .input-box input,
+.signup-wrapper .input-row .password-input-box input {
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.12) !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border: 2px solid rgba(255, 255, 255, 0.28) !important;
+  border-radius: 40px;
+  outline: none;
+  color: #fff !important;
+  box-shadow: none;
+}
+
+.signup-wrapper .input-row .password-input-box input {
+  padding: 0 58px 0 20px;
+}
+
+.signup-wrapper .input-row .input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.signup-wrapper .input-row .input-box input:focus {
+  border-color: rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.28);
+}
+
+.signup-wrapper .input-row .input-box input:-webkit-autofill,
+.signup-wrapper .input-row .input-box input:-webkit-autofill:hover,
+.signup-wrapper .input-row .input-box input:-webkit-autofill:focus,
+.signup-wrapper .input-row .input-box input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff !important;
+  box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.12) inset !important;
+  border: 2px solid rgba(255, 255, 255, 0.28) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.signup-wrapper .password-input-box .eye-icon {
+  right: 12px;
+  top: 25px;
+  width: 40px;
+  height: 40px;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0;
+  padding: 0;
+}

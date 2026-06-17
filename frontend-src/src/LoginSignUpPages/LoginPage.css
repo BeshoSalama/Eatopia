@@ -1,0 +1,249 @@
+/* 🌌 Background & Layout */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 32px);
+  background: url('../assets/HomeImage.png') no-repeat center center / cover;
+  box-shadow: inset 0 600px 150px rgba(0, 0, 0, 0.5);
+  margin: 16px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/* 🧱 Login Box */
+.wrapper {
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(40px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 30px 35px;
+  margin: auto;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ✨ Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wrapper h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* 🧠 Input Fields */
+.input-box {
+  position: relative;
+  width: 100%;
+  margin: 25px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 45px 0 20px;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.icon,
+.eye-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.eye-icon.active {
+  color: #ffd700;
+}
+
+.error-msg {
+  color: #ffb3b3;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* 🌐 Links */
+.forget-pass {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  margin: 10px 0 20px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00b7b3;
+}
+
+/* 🧭 Buttons */
+.wrapper button {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.wrapper button:hover {
+  transform: scale(1.05);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 🔄 Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top: 3px solid #555;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin: 25px 0;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.divider:not(:empty)::before { margin-right: 10px; }
+.divider:not(:empty)::after { margin-left: 10px; }
+
+/* 🌍 Social Buttons */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  transition: transform 0.3s ease;
+}
+
+.social-btn:hover { transform: scale(1.05); }
+
+.social-btn.google {
+  background-color: #fff;
+  color: #444;
+}
+.social-btn.google:hover { background-color: #f5f5f5; }
+
+.social-icon { font-size: 20px; }
+
+/* 🧾 Signup link */
+.signup-link {
+  font-size: 14px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.signup-link a {
+  font-weight: 600;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  .wrapper h1 { font-size: 1.6rem; }
+  .input-box input { font-size: 14px; }
+  .social-btn { font-size: 14px; height: 40px; }
+  .social-icon { font-size: 18px; }
+}
+
+.activation-login-help {
+  margin: 10px 0 14px;
+  padding: 13px;
+  border-radius: 16px;
+  background: rgba(10, 186, 181, 0.12);
+  border: 1px solid rgba(10, 186, 181, 0.25);
+  text-align: center;
+}
+
+.activation-login-help p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: #0f766e;
+  font-weight: 700;
+}
+
+.activation-login-help button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: #0ABAB5;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.activation-login-help button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}

@@ -1,0 +1,124 @@
+/* Wrapper to add the outside margin like the design */
+.hero-wrapper {
+  margin: 16px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hero {
+  height: calc(100vh - 32px);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 3vw 9vw;
+  color: white;
+  box-sizing: border-box;
+
+}
+
+/* LEFT SIDE */
+.hero-left {
+  max-width: 45%;
+}
+
+.hero-left h1 {
+  font-size: 60px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.hero-left p {
+  font-size: 18px;
+  color: #555;
+  max-width: 90%;
+  margin-bottom: 30px;
+}
+
+.join-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 18px 38px;
+  border-radius: 35px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.join-btn:hover {
+  background: #0abab5;
+  transform: scale(1.05);
+}
+
+.btn-icon {
+  font-size: 22px;
+}
+
+/* RIGHT SIDE */
+.hero-right img {
+  width: 720px;
+  max-width: 100%;
+}
+
+
+/* ===========================
+       RESPONSIVE
+   =========================== */
+
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 30px;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 48px;
+  }
+
+  .hero-right img {
+    margin-top: 30px;
+    width: 360px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-left h1 {
+    font-size: 36px;
+  }
+
+  .join-btn {
+    font-size: 18px;
+    padding: 14px 26px;
+  }
+
+  .hero-right img {
+    width: 300px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+}

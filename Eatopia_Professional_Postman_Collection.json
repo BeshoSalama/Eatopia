@@ -1,0 +1,83 @@
+{
+  "info": {
+    "name": "Eatopia Professional Stabilization API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3001/api" },
+    { "key": "token", "value": "" },
+    { "key": "refreshToken", "value": "" },
+    { "key": "postId", "value": "" },
+    { "key": "commentId", "value": "" },
+    { "key": "targetUserId", "value": "" },
+    { "key": "threadId", "value": "" },
+    { "key": "messageId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        { "name": "Signup", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/signup", "body": { "mode": "raw", "raw": "{\n  \"fullName\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"Test@12345\"\n}" } } },
+        { "name": "Activate Account", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/activate-account", "body": { "mode": "raw", "raw": "{\n  \"email\": \"test@example.com\",\n  \"token\": \"PASTE_ACTIVATION_TOKEN\"\n}" } } },
+        { "name": "Resend Activation", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/resend-activation", "body": { "mode": "raw", "raw": "{\n  \"email\": \"test@example.com\"\n}" } } },
+        { "name": "Login", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/login", "body": { "mode": "raw", "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Test@12345\"\n}" } } },
+        { "name": "Refresh Token", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/refresh-token", "body": { "mode": "raw", "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}" } } },
+        { "name": "Forgot Password", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/forgot-password", "body": { "mode": "raw", "raw": "{\n  \"email\": \"test@example.com\"\n}" } } },
+        { "name": "Reset Password", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/reset-password", "body": { "mode": "raw", "raw": "{\n  \"email\": \"test@example.com\",\n  \"code\": \"123456\",\n  \"newPassword\": \"NewTest@12345\",\n  \"confirmPassword\": \"NewTest@12345\"\n}" } } }
+      ]
+    },
+    {
+      "name": "Profile / Account",
+      "item": [
+        { "name": "Get Profile", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/profile" } },
+        { "name": "Update Profile", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/profile", "body": { "mode": "raw", "raw": "{\n  \"fullName\": \"Updated User\",\n  \"email\": \"test@example.com\"\n}" } } },
+        { "name": "Change Password", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/change-password", "body": { "mode": "raw", "raw": "{\n  \"currentPassword\": \"Test@12345\",\n  \"newPassword\": \"NewTest@12345\"\n}" } } },
+        { "name": "Logout All Devices", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/logout-all-devices" } },
+        { "name": "Delete Account", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/account", "body": { "mode": "raw", "raw": "{\n  \"password\": \"Test@12345\",\n  \"confirmationText\": \"DELETE MY ACCOUNT\"\n}" } } }
+      ]
+    },
+    {
+      "name": "Community",
+      "item": [
+        { "name": "Get Posts", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/community/posts?page=1&pageSize=10" } },
+        { "name": "Create Post", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/community/posts", "body": { "mode": "raw", "raw": "{\n  \"content\": \"Hello Eatopia\",\n  \"imageUrl\": null\n}" } } },
+        { "name": "Update Post", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/community/posts/{{postId}}", "body": { "mode": "raw", "raw": "{\n  \"content\": \"Updated content\",\n  \"imageUrl\": null\n}" } } },
+        { "name": "Delete Post", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/community/posts/{{postId}}" } },
+        { "name": "Hide Post", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/community/posts/{{postId}}/hide" } },
+        { "name": "Report Post", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/community/posts/{{postId}}/report", "body": { "mode": "raw", "raw": "{\n  \"reason\": \"Spam\"\n}" } } },
+        { "name": "Add Comment", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/community/posts/{{postId}}/comments", "body": { "mode": "raw", "raw": "{\n  \"content\": \"Nice post\"\n}" } } },
+        { "name": "Report Comment", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/community/posts/{{postId}}/comments/{{commentId}}/report", "body": { "mode": "raw", "raw": "{\n  \"reason\": \"Harassment\"\n}" } } },
+        { "name": "Like Post", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/community/posts/{{postId}}/like" } },
+        { "name": "Search Users", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/community/users?search=test" } },
+        { "name": "Follow User", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/community/users/{{targetUserId}}/follow" } },
+        { "name": "Block User", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/community/users/{{targetUserId}}/block" } },
+        { "name": "Get Blocked Users", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/community/blocked-users" } }
+      ]
+    },
+    {
+      "name": "Chat",
+      "item": [
+        { "name": "Create/Get Thread", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/chat/threads", "body": { "mode": "raw", "raw": "{\n  \"otherUserId\": \"{{targetUserId}}\"\n}" } } },
+        { "name": "Get Threads", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/chat/threads" } },
+        { "name": "Get Messages", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/chat/threads/{{threadId}}/messages?page=1&pageSize=50" } },
+        { "name": "Send Text Message", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/chat/threads/{{threadId}}/messages", "body": { "mode": "raw", "raw": "{\n  \"messageText\": \"Hello\",\n  \"messageType\": \"text\"\n}" } } },
+        { "name": "Edit Message", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/chat/threads/{{threadId}}/messages/{{messageId}}", "body": { "mode": "raw", "raw": "{\n  \"messageText\": \"Edited message\"\n}" } } },
+        { "name": "Delete Message", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/chat/threads/{{threadId}}/messages/{{messageId}}" } },
+        { "name": "Mark Thread Read", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/chat/threads/{{threadId}}/read" } },
+        { "name": "Accept Message Request", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/chat/threads/{{threadId}}/accept" } },
+        { "name": "Delete Message Request", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/chat/threads/{{threadId}}/request" } },
+        { "name": "Block Thread User", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/chat/threads/{{threadId}}/block" } },
+        { "name": "Report Message", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/community/messages/{{messageId}}/report", "body": { "mode": "raw", "raw": "{\n  \"reason\": \"Spam\"\n}" } } }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        { "name": "Stats", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/admin/stats" } },
+        { "name": "Users", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/admin/users" } },
+        { "name": "Reports", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{token}}"}], "url": "{{baseUrl}}/admin/reports?status=Pending" } },
+        { "name": "Update Report Status", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}], "url": "{{baseUrl}}/admin/reports/{{reportId}}/status", "body": { "mode": "raw", "raw": "{\n  \"status\": \"Reviewed\"\n}" } } }
+      ]
+    }
+  ]
+}
